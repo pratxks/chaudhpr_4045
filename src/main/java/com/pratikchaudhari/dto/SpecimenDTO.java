@@ -32,5 +32,11 @@ public class SpecimenDTO {
 		this.description = description;
 	}
 	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return specimenId + " " + latitude + " " + longitude + " " + description + " ";
+	}
+	
 
 }
