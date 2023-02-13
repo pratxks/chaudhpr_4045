@@ -3,6 +3,7 @@ package com.pratikchaudhari.chaudhpr_4045;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,8 +22,9 @@ public class ChaudhprController {
 //	Handle the /index end point
 	
 	@RequestMapping(value="/index", method=RequestMethod.GET)
-	public String read() {
+	public String read(Model model) {
 		SpecimenDTO specimenDTO = specimenServiceStub.fetchById(36);
+		model.addAttribute("specimenDTO", specimenDTO);
 		return "start";
 	}
 	
